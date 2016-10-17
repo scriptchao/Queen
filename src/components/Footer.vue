@@ -171,7 +171,7 @@ a
 						href : "/business"
 					}
 				]
-			};
+			}
 		}
 	}
 </script>

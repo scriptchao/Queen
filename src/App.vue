@@ -5,6 +5,7 @@
     line-height 1
     font-family Microsoft Yahei
     color rgb(51, 51, 51)
+    box-sizing border-box
 a
     text-decoration none
     color inherit
