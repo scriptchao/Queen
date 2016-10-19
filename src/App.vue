@@ -34,13 +34,13 @@ i
 	import MyHeader from "./components/Header";
 	import MyNav from "./components/Nav";
 	import MyFooter from "./components/Footer";
-    import myCenter from './components/Center'
+    import myCenter from './components/Center';
 	export default {
         components : {
             MyHeader,
             MyNav,
             MyFooter,
-            myCenter,
+            myCenter
         }
 	};
 </script>

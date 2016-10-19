@@ -37,12 +37,89 @@
                         line-height 2
                         a
                             cursor pointer
+    .cen
+        position relative
+        .ipt
+            float left
+            margin-left 160px
+            margin-top 35px
+            input
+                width 500px
+                height 40px
+                border 1px solid rgb(228,228,228)
+                outline none
+                padding 0 20px
+
+            span
+                font-size 20px
+                padding 7px 12px 5px 12px
+                border 1px solid rgb(228,228,228)
+                vertical-align middle
+                margin-left -5px
+                cursor pointer
+        .text
+            position absolute
+            left 590px
+            top 47px
+            span
+                font-size 12px
+                color rgb(102,102,102)
+                background rgb(243,243,243)
+                margin-left 5px
+                cursor pointer
+                &:hover
+                    background rgb(223,223,223)
+        .shop
+            position relative
+            font-size 14px
+            color rgb(102,102,102)
+            height 40px
+            width 130px
+            border 1px solid rgb(228,228,228)
+            float left
+            line-height @height
+            text-align center
+            margin-left 50px
+            margin-top 35px
+            cursor pointer
+            z-index 10
+            &:hover
+                .shopBox
+                    display block
+            .shopBox
+                padding 0 20px
+                width 320px
+                height 170px
+                border 1px solid rgb(188,188,188)
+                position absolute
+                left 50%
+                bottom -@height
+                margin-left -(@width/2)
+                background white
+                display none
+                .case1
+                    height 34px
+                    width 100%
+                    background rgb(242,242,242)
+                    box-sizing content-box
+                    padding 0 20px
+                    margin-left -20px
+                    .new
+                        line-height 34px
+                        float left
+                    .empty
+                        line-height 34px
+                        float right
+
+
+
+
 
 
 body
     width 100%
 </style>
-<template><!--只有数组能这么用吗？？？-->
+<template>
     <div class="center w1180">
         <div class="left">
             <span class="logo">LOGO</span>
@@ -58,7 +135,30 @@ body
                 </div>
             </div>
         </div>
-        <div class="cen"></div>
+        <div class="cen">
+            <div class="ipt">
+                <input type="text">
+                <span>☂</span>
+            </div>
+            <div class="text">
+                <span>QueenJewelry</span>
+                <span>钻戒</span>
+                <span>铂金对戒</span>
+            </div>
+            <div class="shop">
+                我的首饰盒▼
+                <div class="shopBox">
+                    <div class="case1">
+                        <span class="new">最新加入的商品</span>
+                        <span class="empty">清空首饰盒</span>
+                    </div>
+                    <div class="case2">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div class="right"></div>
     </div>
 </template>
@@ -212,7 +312,14 @@ body
                             }
                         ]
                     }
-                ]
+                ],
+                shop : {
+                    src : '',
+                    name : 'Life·After LifeQueenJewelry',
+                    money : '',
+                    times : ''
+                }
+
 
             }
         }
