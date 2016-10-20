@@ -110,6 +110,58 @@
                     .empty
                         line-height 34px
                         float right
+                .case2
+                    float left
+                    width 100%
+                    border-bottom 1px solid black
+                    padding-bottom 10px
+                    &.line
+                        line-height 3
+                        margin-top 18px
+                    img
+                        margin-top 10px
+                        float left
+                    >span
+                        width 110px
+                        display inline-block
+                        margin-top 20px
+                        float left
+                        margin-left 15px
+                    div
+                        float right
+                        margin-top 20px
+                        .del
+                            text-align right
+                .case3
+                    margin-top 10px
+                    float left
+                    width 100%
+                    div
+                        float left
+                        p
+                            line-height 1.3
+                            text-align left
+                    a
+                        float right
+                        padding 5px 10px
+                        background rgb(241,241,241)
+                        margin-top 4px
+    .right
+        float right
+        text-align center
+        margin-top 10px
+        font-size 14px
+        line-height 1.5
+        &:before
+            content ''
+            background-image url(../assets/chat.jpg)
+            width 68px
+            height @width
+            display block
+
+
+
+
 
 
 
@@ -122,7 +174,7 @@ body
 <template>
     <div class="center w1180">
         <div class="left">
-            <span class="logo">LOGO</span>
+            <span ref='logo' class="logo">LOGO</span>
             <span class="city">广东▼</span>
             <div class="fixedBox none">
                 <div class="cityAll">
@@ -135,7 +187,7 @@ body
                 </div>
             </div>
         </div>
-        <div class="cen">
+        <div ref='div' class="cen">
             <div class="ipt">
                 <input type="text">
                 <span>☂</span>
@@ -145,27 +197,54 @@ body
                 <span>钻戒</span>
                 <span>铂金对戒</span>
             </div>
-            <div class="shop">
-                我的首饰盒▼
+            <div class="shop">我的首饰盒▼
                 <div class="shopBox">
                     <div class="case1">
                         <span class="new">最新加入的商品</span>
-                        <span class="empty">清空首饰盒</span>
+                        <span class="empty" @click="handleClick">清空首饰盒</span>
                     </div>
-                    <div class="case2">
-
+                    <div class="case2" v-if="current">
+                        <img :src="shop.src">
+                        <span>{{shop.name}}</span>
+                        <div>
+                            <p>￥{{shop.money}} × {{shop.times}}</p>
+                            <p class="del" @click="handleClick">删除</p>
+                        </div>
+                    </div>
+                    <div class="case2 line" v-else>尊敬的女王,您的首饰盒空空如也哦</div>
+                    <div class="case3">
+                        <div v-if="current">
+                            <p>共{{shop.times}}件商品</p>
+                            <p>共计:￥{{shop.money*shop.times}}.00</p>
+                        </div>
+                        <a :href="shop.href">查看首饰盒</a>
                     </div>
 
                 </div>
             </div>
         </div>
-        <div class="right"></div>
+        <div class="right">
+            关注微信
+        </div>
     </div>
 </template>
 <script>
+
     export default{
+        mounted(){
+            console.log(this.$parent.$children[0]);
+            /*console.log(this.$refs)*/
+        },
+        methods : {
+            handleClick(){
+                /*console.log(this);*/
+               this.current = 0;
+
+            }
+        },
         data(){
             return {
+                current : 1,
                 arr : [
                     {
                         word : 'A-G',
@@ -314,13 +393,12 @@ body
                     }
                 ],
                 shop : {
-                    src : '',
-                    name : 'Life·After LifeQueenJewelry',
-                    money : '',
-                    times : ''
+                    src : require('../assets/shop.png'),
+                    name : 'Life·After Life QueenJewelry',
+                    money : '139.00',
+                    times : '4',
+                    href : 'https://www.baidu.com'
                 }
-
-
             }
         }
     }

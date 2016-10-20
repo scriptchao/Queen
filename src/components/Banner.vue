@@ -41,7 +41,7 @@ body
     export default{
         props : ['data'],
         created(){
-            console.log(this);
+            /*console.log(this);*/
         },
         data(){
             return{

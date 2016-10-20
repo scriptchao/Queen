@@ -20,6 +20,8 @@ i
     width 1180px
 .none
     display none
+.clearFix
+    clear both
 </style>
 <template>
 	<div id="app">
