@@ -14,7 +14,7 @@ new Vue({
         mode: 'history',
         routes: [
             {
-                path: '/home',
+                path: '/',
                 component: Home
             },
             {

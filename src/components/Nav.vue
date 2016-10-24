@@ -33,7 +33,7 @@
                 list: [
                     {
                         name: '首页',
-                        href: '/home'
+                        href: '/'
                     },
                     {
                         name: '品牌首发',
