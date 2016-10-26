@@ -17,6 +17,49 @@ a
                 font-weight bold
             a
                 line-height 2
+    .bottom00
+        float right
+        width 380px
+        .bottom00_left
+            float left
+            p
+                &:first-child
+                    font-size 18px
+                    font-weight bold
+                    padding 55px 0 32px 0
+                    &:before
+                        content ''
+                        background url('../assets/tel.png')
+                        display inline-block
+                        width 20px
+                        height @width
+                        vertical-align middle
+                &:nth-child(2)
+                    font-size 24px
+                    font-weight bold
+                &:nth-child(3)
+                    font-size 14px
+                    line-height 2
+        .bottom00_right
+            float right
+            padding-right 50px
+            p
+                &:first-child
+                    font-size 18px
+                    font-weight bold
+                    padding 55px 0 32px 0
+                    text-align center
+                &:last-child
+                    font-size 13px
+                    line-height 2
+                    text-align center
+            a
+                width 85px
+                height @width
+                background url(../assets/u15.jpg)
+                background-size 100% 100%
+                display inline-block
+
 .bottom1
     height 40px
     background-color rgb(228, 228, 228)
@@ -41,6 +84,18 @@ a
 					<a :href="anchor.href">{{anchor.name}}</a>
 				</li>
 			</ul>
+            <div class="bottom00">
+                <div class="bottom00_left">
+                    <p>客服热线</p>
+                    <p>15757123302</p>
+                    <p>(周一至周日,9:00-21:00)</p>
+                </div>
+                <div class="bottom00_right">
+                    <p>女王微信</p>
+                    <a href="https://www.baidu.com"></a>
+                    <p>女王官方微信</p>
+                </div>
+            </div>
 		</div>
 		<div class="bottom1">
 			<div class="w1180">

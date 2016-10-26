@@ -23,25 +23,31 @@
             background-color #5e5e5e
             color white
             text-align center
+            float left
+            margin-top 60px
             .t1
                 margin-top 108px
                 font-size 48px
                 font-weight 700
+                color white
             .t2
                 margin-top 36px
                 font-size 24px
                 font-weight 700
-                color d7d7d7
+                color white
+
         .goods
             margin-left 10px
+            float right
             .top
                 height 40px
                 border-bottom 2px solid #000
                 position relative
+                width 948px
                 .more
                     position absolute
                     right 0
-                    bottom 0
+                    bottom 10px
                     font-size 14px
                     color #fff
                     height 25px
@@ -50,24 +56,31 @@
                     .more-a
                         width 80px
                         display inline-block
-                        height 25px
+                        line-height 25px
                         background-color #797979
+                        color white
                     .more-b
                         width 25px
                         display inline-block
-                        height 25px
+                        line-height 25px
                         background-color #a1a1a1
+                        color white
 
             .goods-list
                 float left
                 margin-left 20px
                 border 1px solid #d7d7d7
                 padding 10px 10px 17px 10px
+
+
                 &:nth-of-type(2)
                     margin-left 0
                 .image
                     width 200px
                     height 200px
+                    img
+                        width 100%
+                        height 100%
                 p
                     margin-top 14px
                 .price

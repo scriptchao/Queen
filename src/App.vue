@@ -22,6 +22,8 @@ i
     display none
 .clearFix
     clear both
+.red
+    color rgb(255,74,1)
 </style>
 <template>
 	<div id="app">

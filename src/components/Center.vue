@@ -25,6 +25,7 @@
             top 70px
             border 1px solid rgb(200,200,200)
             padding 10px
+            z-index 20
             &:hover
                 display block
             .cityAll
@@ -37,6 +38,8 @@
                         line-height 2
                         a
                             cursor pointer
+                            &:hover
+                                color rgb(255,74,0)
     .cen
         position relative
         .ipt
@@ -55,7 +58,7 @@
                 padding 7px 12px 5px 12px
                 border 1px solid rgb(228,228,228)
                 vertical-align middle
-                margin-left -5px
+                margin-left -6px
                 cursor pointer
         .text
             position absolute
@@ -67,6 +70,7 @@
                 background rgb(243,243,243)
                 margin-left 5px
                 cursor pointer
+                padding 1px 0
                 &:hover
                     background rgb(223,223,223)
         .shop

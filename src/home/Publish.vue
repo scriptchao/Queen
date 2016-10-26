@@ -23,12 +23,41 @@
                     font-size 13px
                     line-height 30px
                     color white
-                a
+                >a
                     width 180px
                     height 180px
                     display inline-block
                     background-size 100% 100%
                     margin 40px 0 0 20px
+                .boxInner
+                    width 160px
+                    float right
+                    height 100%
+                    p
+                        &:first-of-type
+                            span
+                                &:first-child
+                                    font-size 14px
+                                    font-weight bold
+                                    margin-right 10px
+                                &:last-child
+                                    font-size 22px
+                        &:nth-of-type(2)
+                            width 128px
+                            font-size 14px
+                            margin 30px 0
+                        &:nth-of-type(3)
+                            font-size 13px
+                            margin-top 20px
+                        &:nth-of-type(4)
+                            font-size 13px
+                            margin-top 10px
+                    a
+                        color white
+                        padding 6px 22px
+                        background rgb(80,80,80)
+                        font-size 13px
+                        float right
     body
         width 100%
 </style>
@@ -43,6 +72,15 @@
                 <div class="box">
                     <p v-text="item.box.title"></p>
                     <a :href="item.box.href" :style="{'background-image' : 'url(' + item.box.src + ')'}"></a>
+                    <div class="boxInner">
+                        <p><span>代言人:</span><span v-text="item.box.name"></span></p>
+                        <p>拒绝平庸，追求卓越凸显个性，绝不将就</p>
+                        <img src="../assets/icon3.png" alt="">
+                        <img src="../assets/icon4.png" alt="">
+                        <a href="https://www.baidu.com">立即购买</a>
+                        <p>{{item.box.like}}人喜欢</p>
+                        <p>{{item.box.buy}}人已经购买</p>
+                    </div>
                 </div>
             </div>
         </div>

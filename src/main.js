@@ -4,7 +4,8 @@ import Home from './pages/Home';
 import Publish from './pages/Publish';
 import Street from './pages/Street';
 import Represent from './pages/Represent';
-import Apply from './pages/Apply';
+import ApplyStart from './pages/ApplyStart';
+import ApplyPreview from './pages/ApplyPreview';
 import Activity from './pages/Activity';
 import App from "./App";
 Vue.use(VueRouter);
@@ -30,13 +31,18 @@ new Vue({
                 component: Represent
             },
             {
-                path: '/apply',
-                component: Apply
+                path: '/applyStart',
+                component: ApplyStart
+            },
+            {
+                path: '/applyPreview',
+                component: ApplyPreview
             },
             {
                 path: '/activity',
                 component: Activity
-            }
+            },
+
         ]
     }),
     render : h => h(App)
