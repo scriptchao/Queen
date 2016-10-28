@@ -71,34 +71,28 @@
             border 1px solid rgb(242,242,242)
             font-size 14px
             position relative
-            .form_1
-                overflow hidden
-                span
-                    &:first-child
-                        float left
-                    &:last-child
-                        float right
-            p
-                margin-top 25px
-                &:last-of-type
-                    width 650px
-            .form_2
-                height 250px
-                margin-top 100px
-                i
-                    height @height
-                    width @height
-                    margin-right 15px
-                    background-size contain
-                    background-repeat no-repeat
+            div
+                margin-left 260px
+                margin-top 190px
+                display inline-block
+                position relative
+                &:before
+                    content ''
+                    background url(../assets/laugh.jpg)
                     display inline-block
-                    border-radius 50%
-
-            .form_3
-                position absolute
-                bottom 30px
+                    width 45px
+                    height 45px
+                    position absolute
+                    top 0
+                    left -70px
+                p
+                    line-height 1.8
+                    &:nth-of-type(4)
+                        margin-top 38px
+                .size16
+                    font-size 16px
                 a
-                    width 100px
+                    width 140px
                     height 30px
                     border-radius 5px
                     background rgb(166,166,166)
@@ -107,73 +101,45 @@
                     line-height @height
                     color white
                     margin-right 15px
-
+                    margin-top 20px
 
     body
         width 100%
 </style>
 <template>
     <div class="apply w1180">
-        <div class="meter step2">
+        <div class="meter step3">
             <div class="circle done">1</div>
             <div class="circle done">2</div>
-            <div class="circle normal">3</div>
+            <div class="circle done">3</div>
             <div class="progress"></div>
         </div>
         <form>
-            <div class="form_1">
-                <span v-text="req"></span>
-                <span>申请类目:{{type}}</span>
+            <div>
+                <p class="size16">恭喜！您的创意已经发布成功</p>
+                <p class="size16">请耐心等待，我能会在24小时之内回复</p>
+                <p class="size16">从而进一步与您沟通创意，助您早日成为女王！</p>
+                <p>您可以：</p>
+                <router-link :to="'/applyStart'">继续发布需求</router-link>
+                <router-link :to="'/'">逛逛街买首饰</router-link>
             </div>
-            <p>联系电话:{{tel}}</p>
-            <p>申请具体要求:</p>
-            <p>{{detail}}</p>
-            <div class="form_2">
-                <i :style="{'background-image': 'url(' + path + ')'}" alt=""></i>
-                <i :style="{'background-image': 'url(' + path + ')'}" alt=""></i>
-                <i :style="{'background-image': 'url(' + path + ')'}" alt=""></i>
 
-
-            </div>
-            <div class="form_3">
-                <router-link :to="'/applyStart'">修改需求</router-link>
-                <router-link :to="href" @handleClick>发布需求</router-link>
-            </div>
         </form>
         <apply-right></apply-right>
     </div>
 
 </template>
 <script>
-    import ApplyRight from '../components/ApplyRight.vue'
+    import ApplyRight from '../components/ApplyRight'
     export default{
-        methods:{
-            handleClick(){
-
-            }
-        },
-        created(){
-            console.log(this.$router)
-        },
         data(){
-            const {
-                req,
-                type,
-                tel,
-                detail,
-                path
-            } = this.$route.query;
             return{
-                href: '/applyPost',
-                req,
-                type,
-                tel,
-                detail,
-                path
+
             }
         },
         components:{
             ApplyRight
         }
+
     }
 </script>

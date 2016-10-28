@@ -6,7 +6,9 @@ import Street from './pages/Street';
 import Represent from './pages/Represent';
 import ApplyStart from './pages/ApplyStart';
 import ApplyPreview from './pages/ApplyPreview';
+import ApplyPost from './pages/ApplyPost';
 import Activity from './pages/Activity';
+import Login from './header/login.vue'
 import App from "./App";
 Vue.use(VueRouter);
 new Vue({
@@ -14,6 +16,10 @@ new Vue({
     router: new VueRouter({
         mode: 'history',
         routes: [
+            {
+                path: '/login',
+                component:Login
+            },
             {
                 path: '/',
                 component: Home
@@ -39,10 +45,13 @@ new Vue({
                 component: ApplyPreview
             },
             {
+                path:'/applyPost',
+                component:ApplyPost
+            },
+            {
                 path: '/activity',
                 component: Activity
-            },
-
+            }
         ]
     }),
     render : h => h(App)

@@ -116,36 +116,15 @@
             width 100px
             height 30px
             border-radius 5px
-            background rgb(133,133,133)
+            background rgb(166,166,166)
             border none
             margin-top 30px
-    .info
-        float right
-        padding 35px 30px
-        margin-top 30px
-        background rgb(241,241,241)
-        width 308px
-        .info_1
-        .info_2
-            border-bottom 1px dashed rgb(214,214,214)
-            padding-bottom 45px
-            p
-                font-size 14px
-                line-height 1.5
-            span
-                display inline-block
-                padding-bottom 20px
+            display inline-block
+            text-align center
+            line-height @height
+            color white
+            font-size 14px
 
-        .info_2
-            margin-top 40px
-            .info2_tel
-                font-size 20px
-
-        img
-            width 200px
-            height @width
-            margin-top 56px
-            margin-bottom 56px
 
 body
     width 100%
@@ -189,46 +168,37 @@ body
                     <a>上传遇到问题？</a>
                 </p>
             </div>
-            <router-link class="next" @click="handleNext" :to="href">下一步</router-link>
+            <router-link class="next" @click="handleNext" :to="{path:href,query:{req : req,type : type,tel : tel,detail : detail,path : path}}">下一步</router-link>
         </form>
-        <div class="info">
-            <div class="info_1">
-                <span>保障交易安全</span>
-                <p>个人资料绝不泄露</p>
-                <p>交易问题一律赔偿</p>
-                <p>不收取任何费用</p>
-            </div>
-            <div class="info_2">
-                <span>联系客服帮你发需求</span>
-                <p>客服电话</p>
-                <p class="info2_tel">15757123301</p>
-                <p>(周一至周日,9:00-21:00)</p>
-            </div>
-            <img src="../assets/u15.jpg" alt="">
-        </div>
+        <apply-right></apply-right>
+
     </div>
 </template>
 <script>
+    import ApplyRight from '../components/ApplyRight.vue'
     export default{
+        created(){
+
+        },
         data(){
             return {
                 href : '/applyPreview',
                 arrTypes : [
                     {
                         name : '首发申请',
-                        value : '111'
+                        value : '首发申请'
                     },
                     {
                         name : '创意申请',
-                        value : '222'
+                        value : '创意申请'
                     },
                     {
                         name : '定制申请',
-                        value : '333'
+                        value : '定制申请'
                     },
                 ],
                 path : '',
-                type : '333',
+                type : '定制申请',
                 req : '',
                 tel : "",
                 code : "",
@@ -249,6 +219,8 @@ body
                 /*&& /jpe?g|png|bmp|gif/.test(e.target.files.type)*/
             },
             handleNext(){
+              /*  console.log(this);*/
+               /* arrMsg = [this.type, this.req, this.tel, this.code, this.detail];*/
                 console.log(this.type, this.req, this.tel, this.code, this.detail);
             },
             handleValidate(type,e){
@@ -258,6 +230,9 @@ body
                     code : /^\d{6}$/
                 }[type] || /.*/).test(value)) ? "您的输入有误" : "";
             }
+        },
+        components:{
+            ApplyRight
         }
     }
 </script>

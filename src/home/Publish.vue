@@ -84,12 +84,32 @@
                 </div>
             </div>
         </div>
+        <div class="publish-img" v-for="num in count">
+            <div v-for="item in arrPublish" :style="{'background-image' : 'url(' + item.src + ')'}">
+                <span>LOGO</span>
+                <div class="box">
+                    <p v-text="item.box.title"></p>
+                    <a :href="item.box.href" :style="{'background-image' : 'url(' + item.box.src + ')'}"></a>
+                    <div class="boxInner">
+                        <p><span>代言人:</span><span v-text="item.box.name"></span></p>
+                        <p>拒绝平庸，追求卓越凸显个性，绝不将就</p>
+                        <img src="../assets/icon3.png" alt="">
+                        <img src="../assets/icon4.png" alt="">
+                        <a href="https://www.baidu.com">立即购买</a>
+                        <p>{{item.box.like}}人喜欢</p>
+                        <p>{{item.box.buy}}人已经购买</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </template>
 <script>
     export default{
         data(){
             return {
+                count : 0,
                 arrPublish : [
                     {
                         src : require('../assets/5zcX5nGL-0.jpg'),
@@ -126,6 +146,11 @@
                     },
 
                 ]
+            }
+        },
+        methods:{
+            handleClick(){
+                this.count++
             }
         }
     }

@@ -18,6 +18,9 @@ i
 .w1180
     margin 0 auto
     width 1180px
+.w1000
+    margin 0 auto
+    width 1000px
 .none
     display none
 .clearFix

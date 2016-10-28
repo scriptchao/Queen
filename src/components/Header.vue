@@ -24,9 +24,9 @@ body
 <template>
     <div class="header">
         <div class="main w1180">
-            <p>热线电话：12345678912</p>
+            <p>热线电话：15757123302</p>
             <div class="right">
-                <a v-for="list of arr" :href="list.href">{{list.name}}</a>
+                <router-link v-for="list of arr" :to="list.href">{{list.name}}</router-link>
             </div>
         </div>
     </div>
@@ -37,11 +37,11 @@ body
             return {
                 arr: [
                     {
-                        name: '12345678912',
-                        href: '/'
+                        name: '登入',
+                        href: '/login'
                     },
                     {
-                        name: '退出',
+                        name: '注册',
                         href: '/'
                     },
                     {

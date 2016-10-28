@@ -58,7 +58,7 @@
                 padding 7px 12px 5px 12px
                 border 1px solid rgb(228,228,228)
                 vertical-align middle
-                margin-left -6px
+                margin-left -5px
                 cursor pointer
         .text
             position absolute
@@ -193,7 +193,7 @@ body
         </div>
         <div ref='div' class="cen">
             <div class="ipt">
-                <input type="text">
+                <input type="text" placeholder="搜索你需要的关键词">
                 <span>☂</span>
             </div>
             <div class="text">
@@ -236,7 +236,7 @@ body
 
     export default{
         mounted(){
-            console.log(this.$parent.$children[0]);
+            /*console.log(this.$parent.$children[0]);*/
             /*console.log(this.$refs)*/
         },
         methods : {
