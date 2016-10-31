@@ -121,9 +121,9 @@
         </div>
         <div class="login_main">
             <div class="login_main_left">
-                <input type="text">
-                <input type="password">
-                <input type="text" @focus="handleFocus" class="code">
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+                <input type="text" @focus="handleFocus" class="code" placeholder="验证码">
                 <span v-text="code"></span>
                 <div class="login_code">
                     <a href="">忘记密码</a>

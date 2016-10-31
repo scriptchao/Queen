@@ -163,15 +163,6 @@
             height @width
             display block
 
-
-
-
-
-
-
-
-
-
 body
     width 100%
 </style>
@@ -179,13 +170,13 @@ body
     <div class="center w1180">
         <div class="left">
             <span ref='logo' class="logo">LOGO</span>
-            <span class="city">广东▼</span>
+            <span class="city">{{txt}}▼</span>
             <div class="fixedBox none">
                 <div class="cityAll">
                     <ul v-for="list of arr">
                         <li>{{list.word}}</li>
                         <li v-for="list of list.city">
-                            <a :href="list.href">{{list.name}}</a>
+                            <a  @click="handleClick1(list.name)">{{list.name}}</a>
                         </li>
                     </ul>
                 </div>
@@ -244,11 +235,15 @@ body
                 /*console.log(this);*/
                this.current = 0;
 
+            },
+            handleClick1(option){
+                this.txt = option
             }
         },
         data(){
             return {
                 current : 1,
+                txt : '北京',
                 arr : [
                     {
                         word : 'A-G',
@@ -312,10 +307,6 @@ body
                                 href : '/'
                             },
                             {
-                                name : '黑龙江',
-                                href : '/'
-                            },
-                            {
                                 name : '吉林',
                                 href : '/'
                             },
@@ -334,10 +325,6 @@ body
                         city : [
                             {
                                 name : '辽宁',
-                                href : '/'
-                            },
-                            {
-                                name : '内蒙古',
                                 href : '/'
                             },
                             {

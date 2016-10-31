@@ -18,6 +18,8 @@
                     display inline-block
                 &:not(:first-child)
                     margin-left 10px
+                &:hover
+                    color rgb(255,74,1)
 body
     width 100%
     </style>

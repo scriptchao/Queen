@@ -77,7 +77,7 @@
                         <p>拒绝平庸，追求卓越凸显个性，绝不将就</p>
                         <img src="../assets/icon3.png" alt="">
                         <img src="../assets/icon4.png" alt="">
-                        <a href="https://www.baidu.com">立即购买</a>
+                        <router-link :to="href">立即购买</router-link>
                         <p>{{item.box.like}}人喜欢</p>
                         <p>{{item.box.buy}}人已经购买</p>
                     </div>
@@ -109,6 +109,7 @@
     export default{
         data(){
             return {
+                href : '/publish',
                 count : 0,
                 arrPublish : [
                     {

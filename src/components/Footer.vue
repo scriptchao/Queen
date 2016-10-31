@@ -81,7 +81,7 @@ a
 			<ul v-for="list of arrBottom1Anchors">
 				<li>{{list.name}}</li>
 				<li v-for="anchor of list.anchor">
-					<a :href="anchor.href">{{anchor.name}}</a>
+					<a>{{anchor.name}}</a>
 				</li>
 			</ul>
             <div class="bottom00">
@@ -99,7 +99,7 @@ a
 		</div>
 		<div class="bottom1">
 			<div class="w1180">
-				<a v-for="anchor of arrBottom2Anchors" :href="anchor.href">{{anchor.name}}</a>
+				<a v-for="anchor of arrBottom2Anchors" >{{anchor.name}}</a>
 			</div>
 		</div>
 		<div class="bottom2">

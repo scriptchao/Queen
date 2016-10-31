@@ -9,6 +9,7 @@
         height 350px
         top 0
         left 0
+        cursor pointer
         &.current
             z-index 1
     em
@@ -36,7 +37,7 @@ body
     const timer = callback => {
         t = setInterval(() =>{
             callback();
-        },2000)
+        },3000)
     };
     export default{
         props : ['data'],
@@ -60,9 +61,9 @@ body
                 /*setInterval(() =>{
                     this.currentIndex = this.currentIndex == this.len - 1  ? 0 : this.currentIndex + 1
                 },1000)*/
-                /*timer(() =>{
+                timer(() =>{
                     this.currentIndex = this.currentIndex == this.len - 1  ? 0 : this.currentIndex + 1
-                })*/
+                })
             }
         },
         mounted(){
@@ -71,6 +72,5 @@ body
             })
         }
     }
-
 
 </script>

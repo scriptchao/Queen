@@ -10,7 +10,7 @@
             line-height 2
         >span
             float right
-            padding 10px 14px
+            padding 9px 14px 10px 14px
             font-size 28px
             background rgb(241,241,241)
             border-radius 50%
@@ -37,19 +37,19 @@
             return{
                 arrBanner : [
                     {
-                        name : '图片1',
+                        name : '',
                         src : require('../assets/u28_state0.jpg')
                     },
                     {
-                        name : '图片2',
+                        name : '',
                         src : require('../assets/u28_state1.jpg')
                     },
                     {
-                        name : '图片3',
+                        name : '',
                         src : require('../assets/u28_state2.jpg')
                     },
                     {
-                        name : '图片4',
+                        name : '',
                         src : require('../assets/u28_state3.jpg')
                     }
                 ]

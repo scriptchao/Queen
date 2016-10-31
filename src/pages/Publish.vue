@@ -59,6 +59,7 @@
                     line-height 40px
                     color white
                     font-size 18px
+                    display inline-block
                 .time
                     margin-top 80px
                     font-size 14px
@@ -159,7 +160,7 @@
                     <p class="name">{{item.name}}</p>
                     <p class="keywords"><span v-for="word of item.keywords" >{{word}}</span></p>
                     <p class="line"></p>
-                    <div class="btn">我要代言</div>
+                    <router-link class="btn" :to="href">我要代言</router-link>
                     <p class="time">距首发结束 : {{item.overtime.day}}天{{item.overtime.hour}}时{{item.overtime.minute}}分{{item.overtime.second}}秒</p>
                 </div>
             </div>
@@ -198,6 +199,7 @@
     export default{
         data(){
             return {
+                href : '/represent',
                 list:[
                     {
                         imgUrl:require("../assets/Brandnew/1.jpg"),

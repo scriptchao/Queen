@@ -43,31 +43,73 @@ new Vue({
             },
             {
                 path: '/publish',
-                component: Publish
+                component: SubApp,
+                children:[
+                    {
+                        path:'/',/*子集根！！！*/
+                        component: Publish
+                    }
+                ]
             },
             {
                 path: '/street',
-                component: Street
+                component: SubApp,
+                children:[
+                    {
+                        path:'/',
+                        component: Street
+                    }
+                ]
             },
             {
                 path: '/represent',
-                component: Represent
+                component: SubApp,
+                children:[
+                    {
+                        path:'/',
+                        component: Represent
+                    }
+                ]
             },
             {
                 path: '/applyStart',
-                component: ApplyStart
+                component: SubApp,
+                children:[
+                    {
+                        path:'/',
+                        component: ApplyStart
+                    }
+                ]
             },
             {
                 path: '/applyPreview',
-                component: ApplyPreview
+                component: SubApp,
+                children:[
+                    {
+                        path:'/',
+                        component: ApplyPreview
+                    }
+                ]
             },
             {
                 path:'/applyPost',
-                component:ApplyPost
+                component:SubApp,
+                children:[
+                    {
+                        path:'/',
+                        component: ApplyPost
+                    }
+                ]
             },
             {
                 path: '/activity',
-                component: Activity
+                component: SubApp,
+                children:[
+                    {
+                        path:'/',
+                        component: Activity
+                    }
+                ]
             }
         ]
     }),

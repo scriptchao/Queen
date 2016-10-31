@@ -77,7 +77,7 @@
                     <p v-text="item.name"></p>
                     <a>我要代言</a>
                     <p >{{item.likes}}人喜欢</p>
-                    <a>立即购买</a>
+                    <router-link :to="href">立即购买</router-link>
                     <p>{{item.buy}}人已经购买</p>
                 </div>
             </div>
@@ -88,6 +88,7 @@
     export default{
         data(){
             return{
+                href : '/applyStart',
                 arrRep : [
                     {
                         img : require('../assets/represent/5gCf6hki-0.jpg'),
