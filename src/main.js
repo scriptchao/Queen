@@ -11,12 +11,18 @@ import Activity from './pages/Activity';
 import Login from './header/Login.vue';
 import Sign from './header/Sign.vue';
 import App from "./App";
+import SubApp from "./SubApp.vue";
+import SignIn from "./header/SignIn.vue";
 Vue.use(VueRouter);
 new Vue({
     el : "#app",
     router: new VueRouter({
         mode: 'history',
         routes: [
+            {
+                path:'/signIn',
+                component: SignIn
+            },
             {
                 path: '/sign',
                 component:Sign
@@ -27,7 +33,13 @@ new Vue({
             },
             {
                 path: '/',
-                component: Home
+                component: SubApp,
+                children:[
+                    {
+                        path:'/',
+                        component: Home
+                    }
+                ]
             },
             {
                 path: '/publish',

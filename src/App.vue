@@ -27,27 +27,15 @@ i
     clear both
 .red
     color rgb(255,74,1)
+.overFlow
+    overflow hidden
+.size12
+    font-size 12px
 </style>
 <template>
 	<div id="app">
-        <my-header></my-header>
-        <my-center></my-center>
-        <my-nav></my-nav>
         <router-view></router-view> <!--//自动注册好-->
-        <my-footer></my-footer>
 	</div>
 </template>
 <script>
-	import MyHeader from "./components/Header";
-	import MyNav from "./components/Nav";
-	import MyFooter from "./components/Footer";
-    import myCenter from './components/Center';
-	export default {
-        components : {
-            MyHeader,
-            MyNav,
-            MyFooter,
-            myCenter
-        }
-	};
 </script>

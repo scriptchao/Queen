@@ -34,7 +34,6 @@
                 border 1px solid rgb(214,214,214)
                 float right
                 font-size 14px
-
                 .sign_right_tel
                     width 199px
                     height 40px
@@ -52,28 +51,64 @@
                     text-align center
                     cursor pointer
                 .sign_tel
-                    padding 100px 0 0 0
+                .sign_eml
+                    padding 100px 38px 0 38px
                     div
                         margin-bottom 20px
-                        width 310px
                         .txt
                             width 60px
                             text-align right
                             display inline-block
                         .wth1
                             width 90px
+                            margin-right 10px
+                            margin-left 10px
+                            height 24px
+
                         .queryCode
-                            font-size 13px
-
-
+                            font-size 12px
+                            width 135px
+                            height 24px
+                            background rgb(214,214,214)
+                            display inline-block
+                            line-height @height
+                            text-align center
+                            cursor pointer
+                        .wth2
+                            margin-left 10px
+                            width 240px
+                            height 24px
+                        .wth3
+                            margin-left 10px
+                        .wth4
+                            width 135px
+                            height 24px
+                        .wth5
+                            width 160px
+                            height 24px
+                            margin-left 10px
+                        .code
+                            width 70px
+                            height 24px
+                            background rgb(200,200,200)
+                            text-align center
+                            line-height 24px
+                            float right
+                            margin-right 8px
+                    .lastDiv
+                        a
+                            background rgb(187,187,187)
+                            width 240px
+                            height 35px
+                            display inline-block
+                            line-height 35px
+                            text-align center
+                            font-size 16px
+                            color white
+                            border-radius 5px
+                            margin-left 75px
     .index
         border-bottom  1px solid rgb(214,214,214)
-
-
-
-
-
-
     body
         width 100%
 </style>
@@ -91,35 +126,64 @@
             <div class="sign_right">
                 <p class="sign_right_tel" :class="{index : !box}" @click="handleClick1">手机号码注册</p>
                 <p class="sign_right_eml" :class="{index : box}" @click="handleClick2">电子邮箱注册</p>
-                <div class="sign_tel">
+                <div class="sign_tel" v-show="box">
                     <div>
                         <span class="txt">手机号码</span>
                         <select class="wth1">
                             <option value="">中国(+86)</option>
                             <option value="">美国(+00)</option>
                         </select>
-                        <input type="text" placeholder="输入手机号码">
+                        <input type="text" placeholder="输入手机号码" class="wth4" v-model="tel">
                     </div>
-                    <div>
+                    <div class="overFlow">
                         <span class="txt">验证码</span>
                         <input type="text" class="wth1">
-                        <a class="queryCode">获取短信验证码</a>
+                        <a class="queryCode" @click="queryCode" v-text="codeMax"></a>
                     </div>
                     <div>
                         <span class="txt">密码</span>
-                        <input type="password" placeholder="6-32个字符">
+                        <input type="password" placeholder="6-32个字符" class="wth2">
                     </div>
                     <div>
                         <span class="txt">确认密码</span>
-                        <input type="password" placeholder="请重复输入您的密码">
+                        <input type="password" placeholder="请重复输入您的密码" class="wth2">
                     </div>
                     <div>
-                        <input type="radio">
-                        <span>同意《女王珠宝账号服务条款，隐私政策》</span>
+                        <span class="txt"></span>
+                        <input type="radio" class="wth3">
+                        <span class="size12">同意《女王珠宝账号服务条款，隐私政策》</span>
                     </div>
-                    <div>
+                    <div class="lastDiv">
                         <router-link :to="href">注册</router-link>
                     </div>
+                </div>
+                <div class="sign_eml">
+                    <div>
+                        <span class="txt">邮箱</span>
+                        <input type="text" placeholder="请输入邮箱号码" class="wth2">
+                    </div>
+                    <div>
+                        <span class="txt">密码</span>
+                        <input type="text" class="wth2" placeholder="6-32个字符">
+                    </div>
+                    <div>
+                        <span class="txt">确认密码</span>
+                        <input type="password" placeholder="请重复输入您的密码" class="wth2">
+                    </div>
+                    <div>
+                        <span class="txt">验证码</span>
+                        <input type="text" placeholder="不区分大小写" class="wth5" @focus="handleFocus">
+                        <p v-text="code" class="code"></p>
+                    </div>
+                    <div>
+                        <span class="txt"></span>
+                        <input type="radio" class="wth3" >
+                        <span class="size12">同意《女王珠宝账号服务条款，隐私政策》</span>
+                    </div>
+                    <div class="lastDiv">
+                        <router-link :to="href">注册</router-link>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -129,7 +193,13 @@
     export default{
         data(){
             return{
-                box : 1
+                box : 1,
+                href : '/signIn',
+                code : Math.floor(Math.random()*10) + ''
+                + Math.floor(Math.random()*10) + ''
+                + Math.floor(Math.random()*10) + ''
+                + Math.floor(Math.random()*10),
+                codeMax : '获取短信验证码'
             }
         },
         methods:{
@@ -138,6 +208,20 @@
             },
             handleClick2(){
                 this.box = 0
+            },
+            handleFocus(){
+                this.code = Math.floor(Math.random()*10) + ''
+                    + Math.floor(Math.random()*10) + ''
+                    + Math.floor(Math.random()*10) + ''
+                    + Math.floor(Math.random()*10)
+            },
+            queryCode(){
+                this.codeMax = Math.floor(Math.random()*10) + ''
+                    + Math.floor(Math.random()*10) + ''
+                    + Math.floor(Math.random()*10) + ''
+                    + Math.floor(Math.random()*10) + ''
+                    + Math.floor(Math.random()*10) + ''
+                    + Math.floor(Math.random()*10)
             }
         }
 

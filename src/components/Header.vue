@@ -37,7 +37,7 @@ body
             return {
                 arr: [
                     {
-                        name: '登入',
+                        name: '登录',
                         href: '/login'
                     },
                     {

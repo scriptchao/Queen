@@ -129,7 +129,7 @@
                     <a href="">忘记密码</a>
                     <a href="">修改密码</a>
                 </div>
-                <router-link :to="href">登入</router-link>
+                <router-link :to="href1">登入</router-link>
                 <div class="login_bottom">
                     <span>使用合作网站账号登入:</span>
                     <a href="https://www.baidu.com"></a>
@@ -141,7 +141,7 @@
             <div class="login_main_right">
                 <h2>欢迎来到女王珠宝!</h2>
                 <p>Registering for a free account gives you a number of additional benefits, including access to additional valuable information that you can browse or download, and much more.</p>
-                <router-link :to="href">注册</router-link>
+                <router-link :to="href2">注册</router-link>
             </div>
 
 
@@ -152,7 +152,8 @@
     export default{
         data(){
             return{
-                href: '/',
+                href1: '/',
+                href2: '/Sign',
                 code : Math.floor(Math.random()*10) + ''
                 + Math.floor(Math.random()*10) + ''
                 + Math.floor(Math.random()*10) + ''
