@@ -42,7 +42,7 @@ body
                     },
                     {
                         name: '注册',
-                        href: '/'
+                        href: '/sign'
                     },
                     {
                         name: '品牌商',

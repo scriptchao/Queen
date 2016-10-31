@@ -8,7 +8,8 @@ import ApplyStart from './pages/ApplyStart';
 import ApplyPreview from './pages/ApplyPreview';
 import ApplyPost from './pages/ApplyPost';
 import Activity from './pages/Activity';
-import Login from './header/login.vue'
+import Login from './header/Login.vue';
+import Sign from './header/Sign.vue';
 import App from "./App";
 Vue.use(VueRouter);
 new Vue({
@@ -16,6 +17,10 @@ new Vue({
     router: new VueRouter({
         mode: 'history',
         routes: [
+            {
+                path: '/sign',
+                component:Sign
+            },
             {
                 path: '/login',
                 component:Login
