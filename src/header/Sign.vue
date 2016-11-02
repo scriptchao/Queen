@@ -242,7 +242,10 @@
                 this.box = 0
             },
             handleClick3(){
-                !this.error1 && !this.error2 && !this.error3 && (this.rdo === 666) && (location.href = '/signIn');
+                console.log(this.error1);
+                if(!this.error1 && !this.error2 && !this.error3 && (this.rdo === '666') && (location.href = '/signIn')){
+                    return
+                }
                 this.errorAll = '注册失败!'
             },
             handleFocus(){
