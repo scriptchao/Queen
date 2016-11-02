@@ -140,19 +140,19 @@ a
 						name : "支付方式",
 						anchor : [
 							{
-								name : "新手指南",
+								name : "货到付款",
 								href : "/rookie"
 							},
 							{
-								name : "常见问题",
+								name : "在线支付",
 								href : "/qa"
 							},
 							{
-								name : "帮助中心",
+								name : "余额支付",
 								href : "/help"
 							},
 							{
-								name : "用户协议",
+								name : "现金券支付",
 								href : "/agreement"
 							}
 						]
@@ -161,19 +161,19 @@ a
 						name : "配送方式",
 						anchor : [
 							{
-								name : "新手指南",
+								name : "包邮政策",
 								href : "/rookie"
 							},
 							{
-								name : "常见问题",
+								name : "配送说明",
 								href : "/qa"
 							},
 							{
-								name : "帮助中心",
+								name : "运费说明",
 								href : "/help"
 							},
 							{
-								name : "用户协议",
+								name : "验货签收",
 								href : "/agreement"
 							}
 						]
@@ -182,19 +182,19 @@ a
 						name : "售后服务",
 						anchor : [
 							{
-								name : "新手指南",
+								name : "品牌承诺",
 								href : "/rookie"
 							},
 							{
-								name : "常见问题",
+								name : "售后咨询",
 								href : "/qa"
 							},
 							{
-								name : "帮助中心",
+								name : "退货政策",
 								href : "/help"
 							},
 							{
-								name : "用户协议",
+								name : "退货办理",
 								href : "/agreement"
 							}
 						]

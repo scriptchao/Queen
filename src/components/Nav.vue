@@ -60,6 +60,8 @@
             padding 0 30px
             font-size 14px
             line-height @height
+            &:hover
+                color rgb(255,74,1)
 </style>
 
 <template>

@@ -52,9 +52,10 @@
                     cursor pointer
                 .sign_tel
                 .sign_eml
-                    padding 100px 38px 0 38px
+                    padding 100px 44px 0 20px
                     div
                         margin-bottom 20px
+                        position relative
                         .txt
                             width 60px
                             text-align right
@@ -107,8 +108,25 @@
                             color white
                             border-radius 5px
                             margin-left 75px
+                            cursor pointer
     .index
         border-bottom  1px solid rgb(214,214,214)
+    .line
+        position relative
+        top -2px
+    .test
+        position absolute
+        font-size 12px
+        white-space nowrap
+        line-height 23px
+        right -37px
+        z-index 10
+        text-align center
+    .testAll
+        text-align center
+        margin-top 10px
+        font-size 12px
+        margin-left 60px
     body
         width 100%
 </style>
@@ -133,28 +151,33 @@
                             <option value="">中国(+86)</option>
                             <option value="">美国(+00)</option>
                         </select>
-                        <input type="text" placeholder="输入手机号码" class="wth4" v-model="tel">
+                        <input type="text" placeholder="输入手机号码" class="wth4" v-model="tel" @blur="handleBlur1">
+                        <span class="test red" v-text="error1"></span>
+
                     </div>
-                    <div class="overFlow">
+                    <div>
                         <span class="txt">验证码</span>
-                        <input type="text" class="wth1">
+                        <input type="text" class="wth1" v-model="cod" @blur="handleBlur2">
                         <a class="queryCode" @click="queryCode" v-text="codeMax"></a>
+                        <span class="test red" v-text="error2"></span>
                     </div>
                     <div>
                         <span class="txt">密码</span>
-                        <input type="password" placeholder="6-32个字符" class="wth2">
+                        <input type="password" placeholder="6-32个字符" class="wth2" v-model="pwd1">
                     </div>
                     <div>
                         <span class="txt">确认密码</span>
-                        <input type="password" placeholder="请重复输入您的密码" class="wth2">
+                        <input type="password" placeholder="请重复输入您的密码" class="wth2" v-model="pwd2" @blur="handleBlur3">
+                        <span class="test red" v-text="error3"></span>
                     </div>
                     <div>
                         <span class="txt"></span>
-                        <input type="radio" class="wth3">
-                        <span class="size12">同意《女王珠宝账号服务条款，隐私政策》</span>
+                        <input type="radio" class="wth3" v-model="rdo" value="666">
+                        <span class="size12 line">同意《女王珠宝账号服务条款，隐私政策》</span>
                     </div>
                     <div class="lastDiv">
-                        <router-link :to="href">注册</router-link>
+                        <a @click="handleClick3">注册</a>
+                        <div class="testAll red" v-text="errorAll"></div>
                     </div>
                 </div>
                 <div class="sign_eml">
@@ -164,7 +187,7 @@
                     </div>
                     <div>
                         <span class="txt">密码</span>
-                        <input type="text" class="wth2" placeholder="6-32个字符">
+                        <input type="password" class="wth2" placeholder="6-32个字符">
                     </div>
                     <div>
                         <span class="txt">确认密码</span>
@@ -178,7 +201,7 @@
                     <div>
                         <span class="txt"></span>
                         <input type="radio" class="wth3" >
-                        <span class="size12">同意《女王珠宝账号服务条款，隐私政策》</span>
+                        <span class="size12 line">同意《女王珠宝账号服务条款，隐私政策》</span>
                     </div>
                     <div class="lastDiv">
                         <router-link :to="href">注册</router-link>
@@ -199,7 +222,16 @@
                 + Math.floor(Math.random()*10) + ''
                 + Math.floor(Math.random()*10) + ''
                 + Math.floor(Math.random()*10),
-                codeMax : '获取短信验证码'
+                codeMax : '获取短信验证码',
+                error1 : '',
+                error2 : '',
+                error3 : '',
+                errorAll : '',
+                tel : '',
+                cod : '',
+                pwd1 : '',
+                pwd2 : '',
+                rdo : ''
             }
         },
         methods:{
@@ -208,6 +240,10 @@
             },
             handleClick2(){
                 this.box = 0
+            },
+            handleClick3(){
+                !this.error1 && !this.error2 && !this.error3 && (this.rdo === 666) && (location.href = '/signIn');
+                this.errorAll = '注册失败!'
             },
             handleFocus(){
                 this.code = Math.floor(Math.random()*10) + ''
@@ -222,7 +258,32 @@
                     + Math.floor(Math.random()*10) + ''
                     + Math.floor(Math.random()*10) + ''
                     + Math.floor(Math.random()*10)
+            },
+            handleBlur1(){
+                /^1[3578]\d{9}$/.test(this.tel) || (this.error1 = '格式错误!');
+                /^1[3578]\d{9}$/.test(this.tel) && (this.error1 = '');
+                console.log(this.rdo)
+
+            },
+            handleBlur2(){
+                (this.cod === this.codeMax) || (this.error2 = '验证错误!');
+                (this.cod === this.codeMax) && (this.error2 = '');
+            },
+            handleBlur3(){
+                if(this.pwd2 === ''){
+                    (this.error3 = '不能为空!');
+                    return
+                }
+                if(/^.{1,5}$/.test(this.pwd2)){
+                    this.error3 = '长度太短!';
+                    return
+                }
+                (this.pwd1 === this.pwd2) || (this.error3 = '不一致!');
+                (this.pwd1 === this.pwd2) && (this.error3 = '');
             }
+        },
+        mounted(){
+            console.log(this.rdo)
         }
 
     }

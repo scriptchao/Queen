@@ -52,14 +52,20 @@
                 border 1px solid rgb(228,228,228)
                 outline none
                 padding 0 20px
-
+                float left
             span
-                font-size 20px
-                padding 7px 12px 5px 12px
+                font-size 14px
+                height 40px
+                width 60px
+                line-height @height
+                text-align center
                 border 1px solid rgb(228,228,228)
-                vertical-align middle
-                margin-left -5px
+                float left
+                margin-left -1px
                 cursor pointer
+                display inline-block
+                &:hover
+                    color rgb(255,74,1)
         .text
             position absolute
             left 590px
@@ -185,7 +191,7 @@ body
         <div ref='div' class="cen">
             <div class="ipt">
                 <input type="text" placeholder="搜索你需要的关键词">
-                <span>☂</span>
+                <span>搜索</span>
             </div>
             <div class="text">
                 <span>QueenJewelry</span>
