@@ -8,11 +8,11 @@ import ApplyStart from './pages/ApplyStart';
 import ApplyPreview from './pages/ApplyPreview';
 import ApplyPost from './pages/ApplyPost';
 import Activity from './pages/Activity';
-import Login from './header/Login.vue';
-import Sign from './header/Sign.vue';
+import Login from './header/Login';
+import Sign from './header/Sign';
 import App from "./App";
-import SubApp from "./SubApp.vue";
-import SignIn from "./header/SignIn.vue";
+import SubApp from "./SubApp";
+import SignIn from "./header/SignIn";
 Vue.use(VueRouter);
 new Vue({
     el : "#app",

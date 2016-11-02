@@ -153,7 +153,7 @@
         data(){
             return{
                 href1: '/',
-                href2: '/Sign',
+                href2: '/sign',
                 code : Math.floor(Math.random()*10) + ''
                 + Math.floor(Math.random()*10) + ''
                 + Math.floor(Math.random()*10) + ''
